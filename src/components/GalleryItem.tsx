@@ -9,9 +9,10 @@ interface GalleryItemProps {
 export function GalleryItem({ image, alt, className = '', index = 0, isVideo = false }: GalleryItemProps) {
   return (
     <div 
-      className={`gallery-item-animate group overflow-hidden rounded-lg relative ${className}`}
+      className={`gallery-item-animate group overflow-hidden rounded-lg relative aspect-square ${className}`}
       style={{
-        animationDelay: `${index * 0.08}s`
+        animationDelay: `${index * 0.08}s`,
+        minHeight: '200px'
       }}
     >
       {isVideo ? (

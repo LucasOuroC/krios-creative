@@ -96,7 +96,7 @@ const galleryItems = [
 
 export function GalleryGrid() {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 auto-rows-[180px] md:auto-rows-[220px]">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
       {galleryItems.map((item, index) => (
         <GalleryItem
           key={index}
