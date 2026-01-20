@@ -12,6 +12,7 @@ import imgHolographicBg from "figma:asset/1550e2937db35a3529ed1f3160c80ab454bf2e
 import videoBg from "./assets/Videosite.mp4";
 import videoNano from "./assets/Nano Render_1.mp4";
 import videoWhatsApp from "./assets/WhatsApp Video 2026-01-09 at 23.36.01.mp4";
+import { GalleryGrid } from './components/GalleryGrid';
 
 function Hero() {
   const heroRef = useRef(null);
@@ -341,7 +342,7 @@ function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
-          <a href="#more-projects" className="inline-flex items-center border-b border-[#1a1a1a] pb-1 text-[#1a1a1a] hover:opacity-70 transition-opacity">
+          <a href="#galeria" className="inline-flex items-center border-b border-[#1a1a1a] pb-1 text-[#1a1a1a] hover:opacity-70 transition-opacity">
             <span className="font-['Space_Mono:Regular',sans-serif] text-xs tracking-[1.2px] uppercase mr-2">mais trabalhos</span>
             <svg className="size-4" fill="none" viewBox="0 0 16 16">
               <path d="M3.33333 8H12.6667" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
@@ -655,6 +656,30 @@ function Testimonial() {
   );
 }
 
+function Gallery() {
+  return (
+    <section id="galeria" className="relative w-full bg-[#eee] py-16 md:py-24 px-4 md:px-8">
+      <div className="max-w-[1600px] mx-auto">
+        <motion.div 
+          className="mb-12 md:mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[0.95] text-[#1a1a1a] text-[clamp(2rem,8vw,5rem)] tracking-[-0.06em] mb-4" style={{ fontWeight: 800 }}>
+            Galeria de Projetos
+          </h2>
+          <p className="font-['Inter:Regular',sans-serif] text-[#6b6b6b] text-base md:text-lg max-w-3xl">
+            Uma seleção de trabalhos que demonstram nossa abordagem criativa e capacidade de execução.
+          </p>
+        </motion.div>
+        <GalleryGrid />
+      </div>
+    </section>
+  );
+}
+
 function Contact() {
   const [formData, setFormData] = useState({
     nome: '',
@@ -935,7 +960,7 @@ function Navigation() {
 
   const menuItems = [
     { label: 'Manifesto', href: '#manifesto' },
-    { label: 'Projetos', href: '#projetos' },
+    { label: 'Projetos', href: '#galeria' },
     { label: 'Assinatura', href: '#assinatura' },
     { label: 'Contato', href: '#contato' }
   ];
@@ -1006,6 +1031,7 @@ export default function App() {
         <VisualSystems />
         <Services />
         <Testimonial />
+        <Gallery />
         <Contact />
         <Footer />
       </div>
