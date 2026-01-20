@@ -1,9 +1,9 @@
 import svgPaths from "./svg-6o9x5wz7sc";
-import imgFrame90 from "figma:asset/c4d88cbac5f8267aefd0182488f86075234c8874.png";
-import imgImageProjeto1 from "figma:asset/8dfd4dadb3681d519a9311e11f6d5423c1b70c6c.png";
-import imgImageProjeto2 from "figma:asset/a3e7e2319c1d5f0bfa86b9b6a875840de77d53a2.png";
-import imgImageProjeto3 from "figma:asset/2a614220d504b63e30c905a386231ae8ca253a96.png";
-import imgAtivo31 from "figma:asset/486251245151822be7abb300220ed42600648afc.png";
+import imgFrame90 from "../assets/c4d88cbac5f8267aefd0182488f86075234c8874.png";
+import imgImageProjeto1 from "../assets/8dfd4dadb3681d519a9311e11f6d5423c1b70c6c.png";
+import imgImageProjeto2 from "../assets/a3e7e2319c1d5f0bfa86b9b6a875840de77d53a2.png";
+import imgImageProjeto3 from "../assets/2a614220d504b63e30c905a386231ae8ca253a96.png";
+import imgAtivo31 from "../assets/486251245151822be7abb300220ed42600648afc.png";
 
 function Text() {
   return (
