@@ -17,86 +17,86 @@ const galleryItems = [
   {
     image: imgMagazine,
     alt: 'Magazine Mockup',
-    className: 'col-span-1 md:col-span-1 lg:col-span-6 row-span-2',
+    className: 'col-span-1 md:col-span-2 lg:col-span-2 row-span-2',
     isVideo: false
   },
   {
     image: videoMotion1,
     alt: 'Motion Design 1',
-    className: 'col-span-1 md:col-span-1 lg:col-span-3 row-span-2',
+    className: 'col-span-1 md:col-span-1 lg:col-span-1',
     isVideo: true
   },
   {
     image: imgWebDesign,
     alt: 'Web Design Mockup Mac',
-    className: 'col-span-1 md:col-span-1 lg:col-span-3 row-span-2',
+    className: 'col-span-1 md:col-span-1 lg:col-span-1',
     isVideo: false
   },
   {
     image: videoNano,
     alt: 'Nano Render',
-    className: 'col-span-1 md:col-span-1 lg:col-span-6 row-span-2',
+    className: 'col-span-1 md:col-span-2 lg:col-span-2 row-span-2',
     isVideo: true
   },
   {
     image: imgCAU,
     alt: 'CAU BR',
-    className: 'col-span-1 md:col-span-1 lg:col-span-3 row-span-2',
+    className: 'col-span-1 md:col-span-1 lg:col-span-2',
     isVideo: false
   },
   {
     image: imgLimpaNome,
     alt: 'Portfolio Limpa Nome',
-    className: 'col-span-1 md:col-span-1 lg:col-span-3 row-span-2',
+    className: 'col-span-1 md:col-span-1 lg:col-span-1',
     isVideo: false
   },
   {
     image: imgUIUX,
     alt: 'UI UX Design',
-    className: 'col-span-1 md:col-span-1 lg:col-span-6 row-span-2',
+    className: 'col-span-1 md:col-span-2 lg:col-span-3',
     isVideo: false
   },
   {
     image: videoWhatsApp,
     alt: 'WhatsApp Video',
-    className: 'col-span-1 md:col-span-1 lg:col-span-3 row-span-2',
+    className: 'col-span-1 md:col-span-1 lg:col-span-2',
     isVideo: true
   },
   {
     image: imgDebora,
     alt: 'Debora Portfolio',
-    className: 'col-span-1 md:col-span-1 lg:col-span-3 row-span-2',
+    className: 'col-span-1 md:col-span-1 lg:col-span-1',
     isVideo: false
   },
   {
     image: imgCachorro,
     alt: 'Portfolio Cachorro',
-    className: 'col-span-1 md:col-span-1 lg:col-span-3 row-span-2',
+    className: 'col-span-1 md:col-span-2 lg:col-span-2',
     isVideo: false
   },
   {
     image: video0118,
     alt: 'Motion 0118',
-    className: 'col-span-1 md:col-span-1 lg:col-span-3 row-span-2',
+    className: 'col-span-1 md:col-span-1 lg:col-span-2',
     isVideo: true
   },
   {
     image: imgCabelereira,
     alt: 'Portfolio Cabeleireira',
-    className: 'col-span-1 md:col-span-1 lg:col-span-6 row-span-2',
+    className: 'col-span-1 md:col-span-2 lg:col-span-2',
     isVideo: false
   },
   {
     image: videoHorizontal,
     alt: 'Motion Horizontal',
-    className: 'col-span-1 md:col-span-1 lg:col-span-12 row-span-2',
+    className: 'col-span-2 md:col-span-3 lg:col-span-6',
     isVideo: true
   }
 ];
 
 export function GalleryGrid() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 auto-rows-[400px]">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 auto-rows-[180px] md:auto-rows-[220px]">
       {galleryItems.map((item, index) => (
         <GalleryItem
           key={index}
