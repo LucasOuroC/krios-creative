@@ -35,8 +35,18 @@ function GalleryPage() {
       </nav>
 
       {/* Gallery Content */}
-      <div className="pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-8">
-        <div className="max-w-[1600px] mx-auto">
+      <div className="relative pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-8">
+        {/* Grain overlay */}
+        <div 
+          className="absolute inset-0 opacity-[0.45] pointer-events-none mix-blend-overlay"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+            backgroundRepeat: 'repeat',
+            backgroundSize: '200px 200px'
+          }}
+        />
+        
+        <div className="max-w-[1600px] mx-auto relative z-10">
           <motion.div 
             className="mb-12 md:mb-16"
             initial={{ opacity: 0, y: 30 }}
