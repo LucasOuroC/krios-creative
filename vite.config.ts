@@ -60,6 +60,12 @@
     build: {
       target: 'esnext',
       outDir: 'build',
+      rollupOptions: {
+        input: {
+          main: path.resolve(__dirname, 'index.html'),
+          gallery: path.resolve(__dirname, 'gallery.html')
+        }
+      }
     },
     server: {
       port: 3000,
