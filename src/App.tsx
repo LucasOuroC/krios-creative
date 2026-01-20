@@ -935,7 +935,7 @@ function Navigation() {
 
   const menuItems = [
     { label: 'Manifesto', href: '#manifesto' },
-    { label: 'Projetos', href: '#galeria' },
+    { label: 'Projetos', href: '/gallery.html' },
     { label: 'Assinatura', href: '#assinatura' },
     { label: 'Contato', href: '#contato' }
   ];
@@ -959,7 +959,7 @@ function Navigation() {
                 className="font-['Inter:Light',sans-serif] font-light text-[#1a1a1a] text-xs tracking-[1.2px] uppercase hover:opacity-70 transition-opacity"
               >
                 {item.label}
-              </a>/gallery.html
+              </a>
             ))}
           </div>
 
