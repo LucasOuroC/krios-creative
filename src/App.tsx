@@ -52,17 +52,24 @@ function Hero() {
       >
         <img alt="Krios Logo" loading="lazy" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgAtivo31} />
       </motion.div>
-      <motion.div 
+      <motion.a
+        href="#manifesto"
         style={{
           position: 'absolute',
           left: '50%',
           transform: 'translateX(-50%)',
           bottom: '4rem',
-          zIndex: 50
+          zIndex: 50,
+          cursor: 'pointer',
+          textDecoration: 'none'
         }}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+        onClick={(e) => {
+          e.preventDefault();
+          document.getElementById('manifesto')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }}
       >
         <motion.div 
           style={{
@@ -95,7 +102,7 @@ function Hero() {
             />
           </svg>
         </motion.div>
-      </motion.div>
+      </motion.a>
     </div>
   );
 }
@@ -146,7 +153,8 @@ function Manifesto() {
   };
 
   return (
-    <motion.div 
+    <motion.div
+      id="manifesto" 
       ref={manifestoRef}
       className="relative w-full overflow-hidden"
       style={{ scale, opacity }}
