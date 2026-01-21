@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import svgPaths from "./imports/svg-6o9x5wz7sc";
@@ -38,7 +38,7 @@ function Hero() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
           style={{ opacity }}
-          preload="auto"
+          preload="metadata"
         >
           <source src={videoBg} type="video/mp4" />
         </motion.video>
@@ -50,30 +50,51 @@ function Hero() {
         transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
         style={{ scale: logoScale, opacity: logoOpacity }}
       >
-        <img alt="Krios Logo" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgAtivo31} />
+        <img alt="Krios Logo" loading="lazy" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgAtivo31} />
       </motion.div>
       <motion.div 
-        className="absolute left-1/2 -translate-x-1/2 bottom-8 md:bottom-16 size-[24px]"
+        style={{
+          position: 'absolute',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          bottom: '4rem',
+          zIndex: 50
+        }}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
       >
-        <div className="h-[24px] opacity-50 overflow-clip relative shrink-0 w-full animate-bounce">
-          <div className="absolute bottom-[20.83%] left-1/2 right-1/2 top-[20.83%]">
-            <div className="absolute inset-[-7.14%_-1px]">
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 2 16">
-                <path d="M1 1V15" stroke="var(--stroke-0, #1A1A1A)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-              </svg>
-            </div>
-          </div>
-          <div className="absolute bottom-[20.83%] left-[20.83%] right-[20.83%] top-1/2">
-            <div className="absolute inset-[-14.29%_-7.14%]">
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 9">
-                <path d="M15 1L8 8L1 1" stroke="var(--stroke-0, #1A1A1A)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-              </svg>
-            </div>
-          </div>
-        </div>
+        <motion.div 
+          style={{
+            position: 'relative',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '48px',
+            height: '48px',
+            borderRadius: '50%',
+            border: '2px solid #FFFFFF',
+            backgroundColor: 'rgba(255, 255, 255, 0.1)',
+            backdropFilter: 'blur(12px)',
+            boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2)'
+          }}
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <svg 
+            style={{ width: '20px', height: '20px' }} 
+            fill="none" 
+            viewBox="0 0 24 24"
+          >
+            <path 
+              d="M12 5V19M12 19L19 12M12 19L5 12" 
+              stroke="#FFFFFF" 
+              strokeWidth="2.5" 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+            />
+          </svg>
+        </motion.div>
       </motion.div>
     </div>
   );
@@ -130,7 +151,7 @@ function Manifesto() {
       className="relative w-full overflow-hidden"
       style={{ scale, opacity }}
     >
-      <img alt="" className="absolute inset-0 w-full h-full object-cover pointer-events-none" src={imgFrame90} />
+      <img alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover pointer-events-none" src={imgFrame90} />
       <div className="relative px-4 md:px-8 lg:px-20 py-20 md:py-32 lg:py-40">
         <div className="max-w-7xl mx-auto">
           <motion.div 
@@ -317,6 +338,7 @@ function Projects() {
               <div className="bg-[#ececf0] aspect-[4/5] overflow-hidden relative">
                 <img 
                   alt={project.title}
+                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
                   src={project.image} 
                 />
@@ -377,7 +399,8 @@ function VisualSystems() {
           loop 
           muted 
           playsInline
-          preload="auto"
+          preload="none"
+          loading="lazy"
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src={videoNano} type="video/mp4" />
@@ -396,8 +419,9 @@ function VisualSystems() {
           autoPlay 
           loop 
           muted 
-          playsInline
-          preload="auto"
+          playsInPlace
+          preload="none"
+          loading="lazy"
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src={videoWhatsApp} type="video/mp4" />
@@ -458,7 +482,8 @@ function Services() {
       {/* Background */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
         <img 
-          alt="Abstract texture background" 
+          alt="Abstract texture background"
+          loading="lazy"
           className="absolute w-full h-full object-cover opacity-10 mix-blend-overlay grayscale contrast-125" 
           src={imgHolographicBg}
         />
@@ -479,9 +504,14 @@ function Services() {
             <span className="h-[1px] w-8 bg-black"></span>
             <span className="font-['Space_Mono:Regular',sans-serif] text-xs uppercase tracking-[0.2em] text-black">Expertise</span>
           </div>
-          <h2 className="font-['Manrope:ExtraBold',sans-serif] text-6xl md:text-8xl lg:text-[7rem] font-extrabold tracking-[-0.04em] text-black leading-[0.9]" style={{ fontWeight: 800 }}>
-            Capacidades
-          </h2>
+          <h2 className="font-['Manrope:ExtraBold',sans-serif] font-extrabold tracking-[-0.04em] text-black leading-[0.9]"
+              style={{
+              fontSize: 'clamp(3rem, 8vw, 7rem)',
+              fontWeight: 800,
+            }}
+                      >
+                  Capacidades
+              </h2>
         </motion.header>
 
         {/* Services Grid */}
@@ -722,7 +752,7 @@ function Contact() {
   };
 
   return (
-    <div className="relative w-full py-12 md:py-20 px-4 md:px-8">
+    <div id="contact" className="relative w-full py-12 md:py-20 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-16">
           {/* Left side - Info */}
@@ -740,7 +770,7 @@ function Contact() {
               <p className="font-['Space_Mono:Regular',sans-serif] font-normal text-[#6b6b6b] text-xs tracking-[1.2px] uppercase">
                 Contato Direto
               </p>
-              <a href="wa.me/5575991908888" className="font-['Inter:Regular',sans-serif] font-normal text-[#1a1a1a] text-xs tracking-[1.2px] uppercase hover:opacity-70 transition-opacity">
+              <a href="https://api.whatsapp.com/send?phone=5575991907000&text=Quero+menos+ruido%F0%9F%94%87+e+mais+clareza%21%F0%9F%92%A1" className="font-['Inter:Regular',sans-serif] font-normal text-[#1a1a1a] text-xs tracking-[1.2px] uppercase hover:opacity-70 transition-opacity">
                 Whatsapp
               </a>
             </div>
@@ -750,11 +780,8 @@ function Contact() {
                 Social
               </p>
               <div className="flex flex-col gap-2">
-                <a href="#" className="font-['Inter:Regular',sans-serif] font-normal text-[#1a1a1a] text-xs tracking-[1.2px] uppercase hover:opacity-70 transition-opacity">
+                <a href="https://www.instagram.com/krioscreative" className="font-['Inter:Regular',sans-serif] font-normal text-[#1a1a1a] text-xs tracking-[1.2px] uppercase hover:opacity-70 transition-opacity">
                   Instagram
-                </a>
-                <a href="#" className="font-['Inter:Regular',sans-serif] font-normal text-[#1a1a1a] text-xs tracking-[1.2px] uppercase hover:opacity-70 transition-opacity">
-                  LinkedIn
                 </a>
               </div>
             </div>
@@ -915,7 +942,7 @@ function Footer() {
     <div className="relative w-full border-t border-[#d4d4d0] py-8 px-4 md:px-6">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="font-['Space_Mono:Regular',sans-serif] font-normal text-[#6b6b6b] text-[10px] tracking-[1px] uppercase text-center md:text-left">
-          © 2024 Krios Creative. All rights reserved.
+          © 2026 Krios Creative. All rights reserved.
         </p>
         <div className="flex gap-6">
           <a href="#" className="font-['Space_Mono:Regular',sans-serif] font-normal text-[#6b6b6b] text-[10px] tracking-[1px] uppercase hover:text-[#1a1a1a] transition-colors">
@@ -934,7 +961,7 @@ function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    { label: 'Manifesto', href: '#manifesto' },
+    { label: 'Manifesto', href: '/manifesto.html' },
     { label: 'Projetos', href: '/gallery.html' },
     { label: 'Assinatura', href: '#assinatura' },
     { label: 'Contato', href: '#contato' }
@@ -996,6 +1023,19 @@ function Navigation() {
 }
 
 export default function App() {
+  useEffect(() => {
+    // Scroll para a seção quando houver hash na URL
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, []);
+
   return (
     <div className="bg-[#f2f2f2] min-h-screen w-full">
       <Navigation />

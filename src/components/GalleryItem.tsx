@@ -8,31 +8,73 @@ interface GalleryItemProps {
 
 export function GalleryItem({ image, alt, className = '', index = 0, isVideo = false }: GalleryItemProps) {
   return (
-    <div 
-      className={`gallery-item-animate group overflow-hidden rounded-lg relative aspect-square ${className}`}
-      style={{
-        animationDelay: `${index * 0.08}s`,
-        minHeight: '200px'
-      }}
-    >
-      {isVideo ? (
-        <video
-          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-          src={image}
-          autoPlay
-          loop
-          muted
-          playsInline
-          aria-label={alt}
-        />
-      ) : (
-        <img
-          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-          src={image}
-          alt={alt}
-        />
-      )}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-    </div>
+    <>
+      <style>{`
+        .gallery-item-wrapper {
+          position: relative;
+          overflow: hidden;
+          border-radius: 0.5rem;
+          width: 100%;
+          height: 100%;
+        }
+        
+        .gallery-item-wrapper video,
+        .gallery-item-wrapper .gallery-bg {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transform: scale(1.0);
+          transition: transform 0.7s cubic-bezier(0, 0, 0.2, 1);
+        }
+        
+        .gallery-item-wrapper:hover video,
+        .gallery-item-wrapper:hover .gallery-bg {
+          transform: scale(1.05);
+        }
+        
+        .gallery-overlay {
+          position: absolute;
+          inset: 0;
+          background-color: rgba(0, 0, 0, 0);
+          transition: background-color 0.5s ease;
+        }
+        
+        .gallery-item-wrapper:hover .gallery-overlay {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+      `}</style>
+      <div 
+        className={`gallery-item-animate gallery-item-wrapper ${className}`}
+        style={{
+          animationDelay: `${index * 0.15}s`
+        }}
+      >
+        {isVideo ? (
+          <video
+            src={image}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="none"
+            aria-label={alt}
+          />
+        ) : (
+          <img
+            src={image}
+            alt={alt}
+            loading="lazy"
+            className="gallery-bg"
+            style={{ 
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center'
+            }}
+          />
+        )}
+        <div className="gallery-overlay" />
+      </div>
+    </>
   );
 }

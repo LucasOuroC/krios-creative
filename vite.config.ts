@@ -63,7 +63,8 @@
       rollupOptions: {
         input: {
           main: path.resolve(__dirname, 'index.html'),
-          gallery: path.resolve(__dirname, 'gallery.html')
+          gallery: path.resolve(__dirname, 'gallery.html'),
+          manifesto: path.resolve(__dirname, 'manifesto.html')
         }
       }
     },

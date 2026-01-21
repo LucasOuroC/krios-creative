@@ -5,7 +5,7 @@ import { GalleryGrid } from './components/GalleryGrid';
 
 function GalleryPage() {
   return (
-    <div className="bg-[#eee] min-h-screen w-full">
+    <div className="dark bg-black text-white min-h-screen w-full">
       {/* Header/Navigation */}
       <nav className="fixed top-0 left-0 right-0 bg-[rgba(244,243,239,0.95)] backdrop-blur-sm border-b border-[#d4d4d0] z-50">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
@@ -17,7 +17,7 @@ function GalleryPage() {
             </a>
             
             <div className="hidden md:flex items-center gap-8">
-              <a href="/#manifesto" className="font-['Space_Mono:Regular',sans-serif] text-[#1a1a1a] text-xs tracking-[1.2px] uppercase hover:opacity-70 transition-opacity">
+              <a href="/manifesto.html" className="font-['Space_Mono:Regular',sans-serif] text-[#1a1a1a] text-xs tracking-[1.2px] uppercase hover:opacity-70 transition-opacity">
                 Manifesto
               </a>
               <a href="/gallery.html" className="font-['Space_Mono:Regular',sans-serif] text-[#1a1a1a] text-xs tracking-[1.2px] uppercase border-b border-[#1a1a1a]">
@@ -68,7 +68,7 @@ function GalleryPage() {
       <div className="relative w-full border-t border-[#d4d4d0] py-8 px-4 md:px-6 bg-[#f4f3ef]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="font-['Space_Mono:Regular',sans-serif] font-normal text-[#6b6b6b] text-[10px] tracking-[1px] uppercase text-center md:text-left">
-            © 2024 Krios Creative. All rights reserved.
+            © 2026 Krios Creative. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a href="#" className="font-['Space_Mono:Regular',sans-serif] font-normal text-[#6b6b6b] text-[10px] tracking-[1px] uppercase hover:text-[#1a1a1a] transition-colors">

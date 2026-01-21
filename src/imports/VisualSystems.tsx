@@ -2,7 +2,7 @@ function ImageAbstractFluidArtPainting() {
   return (
     <div className="absolute h-[748.797px] left-0 top-0 w-[611.5px]" data-name="Image (Abstract fluid art painting)">
       <div className="absolute inset-0 overflow-hidden">
-        <video autoPlay className="absolute h-full left-[-58.83%] max-w-none top-[0.04%] w-[217.69%]" controlsList="nodownload" loop playsInline>
+        <video autoPlay className="absolute h-full left-[-58.83%] max-w-none top-[0.04%] w-[217.69%]" controlsList="nodownload" loop playsInline preload="none" loading="lazy">
           <source src="/_videos/v1/e85081804d38195fe400b791de40909086a90b47" />
         </video>
       </div>
@@ -21,7 +21,7 @@ function Container() {
 function ImageModernOfficeArchitectureDetail() {
   return (
     <div className="absolute h-[748.797px] left-0 opacity-80 top-0 w-[611.5px]" data-name="Image (Modern office architecture detail)">
-      <video autoPlay className="absolute max-w-none object-cover size-full" controlsList="nodownload" loop playsInline>
+      <video autoPlay className="absolute max-w-none object-cover size-full" controlsList="nodownload" loop playsInline preload="none" loading="lazy">
         <source src="/_videos/v1/a924725ae17143dd9918d49673968d6eeae3347b" />
       </video>
     </div>

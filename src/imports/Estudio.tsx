@@ -90,7 +90,7 @@ function Manifesto() {
 function Frame() {
   return (
     <div className="absolute h-[579px] left-0 top-[832px] w-[1223px]">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgFrame90} />
+      <img alt="" loading="lazy" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgFrame90} />
       <Manifesto />
     </div>
   );
@@ -128,7 +128,7 @@ function Container2() {
 function ImageProjeto() {
   return (
     <div className="h-[476.25px] relative shrink-0 w-full" data-name="Image (Projeto 1)">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImageProjeto1} />
+      <img alt="" loading="lazy" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImageProjeto1} />
     </div>
   );
 }
@@ -183,7 +183,7 @@ function Container4() {
 function ImageProjeto1() {
   return (
     <div className="h-[476.25px] relative shrink-0 w-full" data-name="Image (Projeto 2)">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImageProjeto2} />
+      <img alt="" loading="lazy" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImageProjeto2} />
     </div>
   );
 }
@@ -238,7 +238,7 @@ function Container7() {
 function ImageProjeto2() {
   return (
     <div className="h-[476.25px] relative shrink-0 w-full" data-name="Image (Projeto 3)">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImageProjeto3} />
+      <img alt="" loading="lazy" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImageProjeto3} />
     </div>
   );
 }
@@ -313,7 +313,7 @@ function Projects() {
 function ImageAbstractFluidArtPainting() {
   return (
     <div className="absolute h-[748.797px] left-0 top-0 w-[611.5px]" data-name="Image (Abstract fluid art painting)">
-      <video autoPlay className="absolute max-w-none object-cover size-full" controlsList="nodownload" loop playsInline>
+      <video autoPlay className="absolute max-w-none object-cover size-full" controlsList="nodownload" loop playsInline preload="none" loading="lazy">
         <source src="/_videos/v1/e85081804d38195fe400b791de40909086a90b47" />
       </video>
     </div>
@@ -331,7 +331,7 @@ function Container13() {
 function ImageModernOfficeArchitectureDetail() {
   return (
     <div className="absolute h-[748.797px] left-0 opacity-80 top-0 w-[611.5px]" data-name="Image (Modern office architecture detail)">
-      <video autoPlay className="absolute max-w-none object-cover size-full" controlsList="nodownload" loop playsInline>
+      <video autoPlay className="absolute max-w-none object-cover size-full" controlsList="nodownload" loop playsInline preload="none" loading="lazy">
         <source src="/_videos/v1/a924725ae17143dd9918d49673968d6eeae3347b" />
       </video>
     </div>
@@ -782,7 +782,7 @@ function Container28() {
   return (
     <div className="h-[15px] relative shrink-0 w-[270.789px]" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[15px] left-0 not-italic text-[#6b6b6b] text-[10px] top-[0.5px] tracking-[1px] uppercase whitespace-pre">© 2024 Krios Studio. All rights reserved.</p>
+        <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[15px] left-0 not-italic text-[#6b6b6b] text-[10px] top-[0.5px] tracking-[1px] uppercase whitespace-pre">© 2026 Krios Studio. All rights reserved.</p>
       </div>
     </div>
   );
@@ -832,7 +832,7 @@ function Footer() {
 function ImageAbstractFluidLightRefractionBackground() {
   return (
     <div className="absolute h-[832px] left-0 top-0 w-[1223px]" data-name="Image (Abstract fluid light refraction background)">
-      <video autoPlay className="absolute max-w-none object-cover size-full" controlsList="nodownload" loop playsInline>
+      <video autoPlay className="absolute max-w-none object-cover size-full" controlsList="nodownload" loop playsInline preload="none" loading="lazy">
         <source src="/_videos/v1/a5f7406ad02837a2a86c7b034fe740ae9c9ccf1c" />
       </video>
     </div>
@@ -881,7 +881,7 @@ function Hero() {
     <div className="absolute h-[832px] left-0 overflow-clip top-0 w-[1223px]" data-name="Hero">
       <Container30 />
       <div className="absolute h-[200px] left-[calc(50%-12px)] top-1/2 translate-x-[-50%] translate-y-[-50%] w-[167px]" data-name="Ativo 3 1">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgAtivo31} />
+        <img alt="" loading="lazy" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgAtivo31} />
       </div>
       <Container31 />
     </div>

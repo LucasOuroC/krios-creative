@@ -1,3 +1,7 @@
+/* Importação de fontes necessárias para o Manifesto */
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
+
 /*! tailwindcss v4.1.3 | MIT License | https://tailwindcss.com */
 @layer properties {
   @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
@@ -2012,3 +2016,117 @@ body {
 }
 .gallery-item-animate { animation: slideUp 1.2s ease-out forwards; }
 
+
+/* Custom Scrollbar */
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Scrollbar completamente invisível por padrão */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+body:hover ::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+body:hover ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: none;
+}
+
+body:hover {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+}
+
+html:hover {
+  scrollbar-color: rgba(0, 0, 0, 0.4) transparent;
+}
+
+/* ========================================
+   ESTILOS DA PÁGINA DO MANIFESTO - ISOLADOS
+   ======================================== */
+
+/* Efeitos customizados isolados com classe .manifesto-page */
+.manifesto-page {
+  font-family: Epilogue, ui-sans-serif, system-ui, sans-serif !important;
+  scroll-behavior: smooth;
+}
+
+.manifesto-page .glitch-noise {
+  opacity: .05 !important;
+  pointer-events: none !important;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E") !important;
+}
+
+.manifesto-page .liquid-chrome {
+  background: linear-gradient(135deg, #000 0%, #333 25%, #fff 50%, #333 75%, #000 100%) 0 0 / 400% 400% !important;
+}
+
+.manifesto-page .drop-cap:first-letter {
+  float: left !important;
+  color: #000 !important;
+  text-shadow: 2px 2px #0000001a !important;
+  padding-top: .25rem !important;
+  padding-right: .75rem !important;
+  font-family: Epilogue, serif !important;
+  font-size: 4.5rem !important;
+  font-weight: 900 !important;
+  line-height: .8 !important;
+}
+
+.manifesto-page .glitch-border {
+  border: 1px solid #000 !important;
+  position: relative;
+}
+
+.manifesto-page .glitch-border:before {
+  content: "" !important;
+  z-index: -1 !important;
+  opacity: .5 !important;
+  border: 1px solid #333 !important;
+  position: absolute !important;
+  inset: -2px !important;
+}
+
+.manifesto-page .material-symbols-outlined {
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  word-wrap: normal !important;
+  white-space: nowrap !important;
+  direction: ltr !important;
+  font-family: 'Material Symbols Outlined' !important;
+  font-size: 24px !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  line-height: 1 !important;
+  display: inline-block !important;
+}
+
+/* Garantir selection colors na página do manifesto */
+.manifesto-page ::selection {
+  background-color: #000 !important;
+  color: #fff !important;
+}
