@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import bgImage from './assets/6566231.webp';
 
 function AnimatedSection({ children, style = {} }: { children: React.ReactNode, style?: any }) {
   const ref = useRef(null);
@@ -462,7 +463,7 @@ export default function ManifestoPage() {
             style={{
               width: '100%',
               height: '120%',
-              backgroundImage: `url('/src/assets/6566231.webp')`,
+              backgroundImage: `url(${bgImage})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               filter: 'grayscale(100%) contrast(1.25) brightness(0.75)',
