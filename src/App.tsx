@@ -64,14 +64,17 @@ function Hero() {
         href="#manifesto"
         style={{
           position: 'absolute',
-          left: '50%',
+          left: isMobile ? '50%' : '50%',
           bottom: isMobile ? '2rem' : '4rem',
-          transform: 'translateX(-50%)',
+          transform: isMobile ? 'translateX(-50%)' : 'translateX(-50%)',
           zIndex: 50,
           cursor: 'pointer',
           textDecoration: 'none',
-          marginLeft: 0,
-          marginRight: 0
+          marginLeft: isMobile ? '0px' : 0,
+          marginRight: isMobile ? '0px' : 0,
+          right: isMobile ? 'auto' : 'auto',
+          width: isMobile ? 'auto' : 'auto',
+          display: isMobile ? 'block' : 'block'
         }}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -95,8 +98,10 @@ function Hero() {
             backdropFilter: 'blur(12px)',
             WebkitBackdropFilter: 'blur(12px)',
             boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2)',
-            marginLeft: 'auto',
-            marginRight: 'auto'
+            marginLeft: isMobile ? '0px' : 'auto',
+            marginRight: isMobile ? '0px' : 'auto',
+            left: isMobile ? '0px' : 'auto',
+            right: isMobile ? '0px' : 'auto'
           }}
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
