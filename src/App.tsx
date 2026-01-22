@@ -62,16 +62,15 @@ function Hero() {
       </motion.div>
       <motion.a
         href="#manifesto"
+        className="absolute left-1/2 -translate-x-1/2 z-50 cursor-pointer no-underline"
         style={{
-          position: 'absolute',
-          left: '50%',
-          transform: 'translateX(-50%)',
           bottom: isMobile ? '2rem' : '4rem',
-          zIndex: 50,
-          cursor: 'pointer',
-          textDecoration: 'none',
-          marginLeft: '0',
-          right: 'auto'
+          position: 'absolute !important',
+          left: '50% !important',
+          right: 'auto !important',
+          marginLeft: '0 !important',
+          marginRight: '0 !important',
+          transform: 'translateX(-50%) !important'
         }}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -82,19 +81,18 @@ function Hero() {
         }}
       >
         <motion.div 
+          className="relative flex items-center justify-center rounded-full border-2 border-white mx-auto"
           style={{
-            position: 'relative',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
             width: isMobile ? '40px' : '48px',
             height: isMobile ? '40px' : '48px',
-            borderRadius: '50%',
-            border: '2px solid #FFFFFF',
             backgroundColor: 'rgba(255, 255, 255, 0.1)',
             backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
             boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2)',
-            margin: '0 auto'
+            margin: '0 auto !important',
+            display: 'flex !important',
+            justifyContent: 'center !important',
+            alignItems: 'center !important'
           }}
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
@@ -102,7 +100,8 @@ function Hero() {
           <svg 
             style={{ 
               width: isMobile ? '16px' : '20px', 
-              height: isMobile ? '16px' : '20px' 
+              height: isMobile ? '16px' : '20px',
+              display: 'block'
             }} 
             fill="none" 
             viewBox="0 0 24 24"
