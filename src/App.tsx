@@ -14,6 +14,14 @@ import videoNano from "./assets/Nano Render_1.mp4";
 import videoWhatsApp from "./assets/WhatsApp Video 2026-01-09 at 23.36.01.mp4";
 
 function Hero() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -58,10 +66,12 @@ function Hero() {
           position: 'absolute',
           left: '50%',
           transform: 'translateX(-50%)',
-          bottom: '4rem',
+          bottom: isMobile ? '2rem' : '4rem',
           zIndex: 50,
           cursor: 'pointer',
-          textDecoration: 'none'
+          textDecoration: 'none',
+          marginLeft: '0',
+          right: 'auto'
         }}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -77,19 +87,23 @@ function Hero() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            width: '48px',
-            height: '48px',
+            width: isMobile ? '40px' : '48px',
+            height: isMobile ? '40px' : '48px',
             borderRadius: '50%',
             border: '2px solid #FFFFFF',
             backgroundColor: 'rgba(255, 255, 255, 0.1)',
             backdropFilter: 'blur(12px)',
-            boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2)'
+            boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2)',
+            margin: '0 auto'
           }}
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
         >
           <svg 
-            style={{ width: '20px', height: '20px' }} 
+            style={{ 
+              width: isMobile ? '16px' : '20px', 
+              height: isMobile ? '16px' : '20px' 
+            }} 
             fill="none" 
             viewBox="0 0 24 24"
           >
